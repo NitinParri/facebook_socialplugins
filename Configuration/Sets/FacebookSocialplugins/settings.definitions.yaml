@@ -1,0 +1,21 @@
+categories:
+    Social:
+        label: "Facebook Social Plugins"
+    Social.app:
+        label: "App Settings"
+        parent: Social
+
+settings:
+    plugin.tx_facebooksocialplugins.settings.appId:
+        label: "Facebook App ID"
+        description: "App ID of your Facebook App. Create one at https://developers.facebook.com/apps/ if you don't have it yet."
+        category: Social.app
+        type: string
+        default: ""
+
+    plugin.tx_facebooksocialplugins.settings.locale:
+        label: "SDK locale"
+        description: "Locale for the Facebook JavaScript SDK, e.g., nl_NL, en_US, de_DE."
+        category: Social.app
+        type: string
+        default: "en_US"

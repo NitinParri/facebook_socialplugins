@@ -1,0 +1,14 @@
+plugin.tx_facebooksocialplugins {
+
+    settings {
+        appId  = {$plugin.tx_facebooksocialplugins.settings.appId}
+        locale = {$plugin.tx_facebooksocialplugins.settings.locale}
+    }
+
+    view {
+        templateRootPaths {
+            0 = EXT:facebook_socialplugins/Resources/Private/Templates/
+        }
+    }
+
+}

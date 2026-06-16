@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>Facebook Social Plugin</sheetTitle>
+                <type>array</type>
+                <el>
+
+                    <!-- Plugin selection -->
+
+                    <settings.plugin>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.plugin.label</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.plugin.select</label>
+                                    <value></value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.plugin.share_button</label>
+                                    <value>share_button</value>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.plugin.page_plugin</label>
+                                    <value>page_plugin</value>
+                                </numIndex>
+                                <numIndex index="3">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.plugin.embedded_post</label>
+                                    <value>embedded_post</value>
+                                </numIndex>
+                                <numIndex index="4">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.plugin.embedded_video</label>
+                                    <value>embedded_video</value>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.plugin>
+
+                    <settings.href>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.href.label</label>
+                        <displayCond>
+                            <AND>
+                                <numIndex index="0">FIELD:settings.plugin:!=:</numIndex>
+                                <numIndex index="1">FIELD:settings.plugin:!=:share_button</numIndex>
+                            </AND>
+                        </displayCond>
+                        <config>
+                            <type>input</type>
+                            <placeholder>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.href.placeholder</placeholder>
+                        </config>
+                    </settings.href>
+
+
+                    <!-- SHARE BUTTON -->
+
+                    <settings.share_href_type>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.share_href_type.label</label>
+                        <onChange>reload</onChange>
+                        <displayCond>FIELD:settings.plugin:=:share_button</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>custom</default>
+                            <items>
+                                <numIndex index="0">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.share_href_type.custom</label>
+                                    <value>custom</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.share_href_type.current</label>
+                                    <value>current</value>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.share_href_type>
+
+                    <settings.share_href>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.share_href.label</label>
+                        <displayCond>
+                            <AND>
+                                <numIndex index="0">FIELD:settings.plugin:=:share_button</numIndex>
+                                <numIndex index="1">FIELD:settings.share_href_type:=:custom</numIndex>
+                            </AND>
+                        </displayCond>
+                        <config>
+                            <type>input</type>
+                            <placeholder>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.share_href.placeholder</placeholder>
+                        </config>
+                    </settings.share_href>
+
+                    <settings.share_layout>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.share_layout.label</label>
+                        <displayCond>FIELD:settings.plugin:=:share_button</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>button_count</label>
+                                    <value>button_count</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>button</label>
+                                    <value>button</value>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <label>box_count</label>
+                                    <value>box_count</value>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.share_layout>
+
+                    <settings.share_size>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.share_size.label</label>
+                        <displayCond>FIELD:settings.plugin:=:share_button</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>small</label>
+                                    <value>small</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>large</label>
+                                    <value>large</value>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.share_size>
+
+
+                    <!-- PAGE PLUGIN -->
+
+                    <settings.page_tabs>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_tabs.label</label>
+                        <displayCond>FIELD:settings.plugin:=:page_plugin</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectCheckBox</renderType>
+                            <default>timeline</default>
+                            <items>
+                                <numIndex index="0">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_tabs.timeline</label>
+                                    <value>timeline</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_tabs.events</label>
+                                    <value>events</value>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_tabs.messages</label>
+                                    <value>messages</value>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.page_tabs>
+
+                    <settings.page_width>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_width.label</label>
+                        <displayCond>FIELD:settings.plugin:=:page_plugin</displayCond>
+                        <config>
+                            <type>number</type>
+                            <default>340</default>
+                            <range>
+                                <lower>180</lower>
+                                <upper>500</upper>
+                            </range>
+                        </config>
+                    </settings.page_width>
+
+                    <settings.page_height>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_height.label</label>
+                        <displayCond>FIELD:settings.plugin:=:page_plugin</displayCond>
+                        <config>
+                            <type>number</type>
+                            <default>500</default>
+                            <range>
+                                <lower>70</lower>
+                            </range>
+                        </config>
+                    </settings.page_height>
+
+                    <settings.page_hide_cover>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_hide_cover.label</label>
+                        <displayCond>FIELD:settings.plugin:=:page_plugin</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.page_hide_cover>
+
+                    <settings.page_show_facepile>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_show_facepile.label</label>
+                        <displayCond>FIELD:settings.plugin:=:page_plugin</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>1</default>
+                        </config>
+                    </settings.page_show_facepile>
+
+                    <settings.page_hide_cta>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_hide_cta.label</label>
+                        <displayCond>FIELD:settings.plugin:=:page_plugin</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.page_hide_cta>
+
+                    <settings.page_small_header>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_small_header.label</label>
+                        <displayCond>FIELD:settings.plugin:=:page_plugin</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.page_small_header>
+
+                    <settings.page_adapt_container_width>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.page_adapt_container_width.label</label>
+                        <displayCond>FIELD:settings.plugin:=:page_plugin</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>1</default>
+                        </config>
+                    </settings.page_adapt_container_width>
+
+
+                    <!-- EMBEDDED POST -->
+
+                    <settings.post_width>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.post_width.label</label>
+                        <displayCond>FIELD:settings.plugin:=:embedded_post</displayCond>
+                        <config>
+                            <type>input</type>
+                            <placeholder>500</placeholder>
+                        </config>
+                    </settings.post_width>
+
+                    <settings.post_show_text>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.post_show_text.label</label>
+                        <displayCond>FIELD:settings.plugin:=:embedded_post</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.post_show_text>
+
+
+                    <!-- EMBEDDED VIDEO / LIVE VIDEO -->
+
+                    <settings.video_width>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.video_width.label</label>
+                        <displayCond>FIELD:settings.plugin:=:embedded_video</displayCond>
+                        <config>
+                            <type>number</type>
+                            <default>500</default>
+                            <range>
+                                <lower>220</lower>
+                            </range>
+                        </config>
+                    </settings.video_width>
+
+                    <settings.video_allowfullscreen>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.video_allowfullscreen.label</label>
+                        <displayCond>FIELD:settings.plugin:=:embedded_video</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.video_allowfullscreen>
+
+                    <settings.video_autoplay>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.video_autoplay.label</label>
+                        <displayCond>FIELD:settings.plugin:=:embedded_video</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.video_autoplay>
+
+                    <settings.video_show_text>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.video_show_text.label</label>
+                        <displayCond>FIELD:settings.plugin:=:embedded_video</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.video_show_text>
+
+                    <settings.video_show_captions>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.video_show_captions.label</label>
+                        <displayCond>FIELD:settings.plugin:=:embedded_video</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.video_show_captions>
+
+
+                    <!-- SHARED -->
+
+                    <settings.lazy>
+                        <label>LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:flexform.lazy.label</label>
+                        <displayCond>FIELD:settings.plugin:!=:</displayCond>
+                        <config>
+                            <type>check</type>
+                            <default>1</default>
+                        </config>
+                    </settings.lazy>
+
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

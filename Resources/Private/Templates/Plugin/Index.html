@@ -1,0 +1,66 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:fb="http://typo3.org/ns/Refresj/FacebookSocialplugins/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+    <fb:sdk appId="{settings.appId}" locale="{settings.locale}" />
+
+    <f:variable name="lazy">{f:if(condition: settings.lazy, then: 'data-lazy="true"', else: '')}</f:variable>
+
+    <f:switch expression="{settings.plugin}">
+
+        <f:case value="share_button">
+            <div
+                class="fb-share-button"
+                data-href="{settings.share_href}"
+                data-layout="{settings.share_layout}"
+                data-size="{settings.share_size}"
+                {lazy -> f:format.raw}
+            ></div>
+        </f:case>
+
+        <f:case value="page_plugin">
+            <div
+                class="fb-page"
+                data-href="{settings.href}"
+                data-width="{settings.page_width}"
+                data-height="{settings.page_height}"
+                data-tabs="{settings.page_tabs}"
+                data-hide-cover="{f:if(condition: settings.page_hide_cover, then: 'true', else: 'false')}"
+                data-show-facepile="{f:if(condition: settings.page_show_facepile, then: 'true', else: 'false')}"
+                data-hide-cta="{f:if(condition: settings.page_hide_cta, then: 'true', else: 'false')}"
+                data-small-header="{f:if(condition: settings.page_small_header, then: 'true', else: 'false')}"
+                data-adapt-container-width="{f:if(condition: settings.page_adapt_container_width, then: 'true', else: 'false')}"
+                {lazy -> f:format.raw}
+            ></div>
+        </f:case>
+
+        <f:case value="embedded_post">
+            <div
+                class="fb-post"
+                data-href="{settings.href}"
+                data-width="{settings.post_width}"
+                data-show-text="{f:if(condition: settings.post_show_text, then: 'true', else: 'false')}"
+                {lazy -> f:format.raw}
+            ></div>
+        </f:case>
+
+        <f:case value="embedded_video">
+            <div
+                class="fb-video"
+                data-href="{settings.href}"
+                data-width="{settings.video_width}"
+                data-allowfullscreen="{f:if(condition: settings.video_allowfullscreen, then: 'true', else: 'false')}"
+                data-autoplay="{f:if(condition: settings.video_autoplay, then: 'true', else: 'false')}"
+                data-show-text="{f:if(condition: settings.video_show_text, then: 'true', else: 'false')}"
+                data-show-captions="{f:if(condition: settings.video_show_captions, then: 'true', else: 'false')}"
+                {lazy -> f:format.raw}
+            ></div>
+        </f:case>
+
+        <f:defaultCase></f:defaultCase>
+
+    </f:switch>
+
+</html>

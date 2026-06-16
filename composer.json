@@ -1,0 +1,33 @@
+{
+    "name": "refresj/facebook-socialplugins",
+    "type": "typo3-cms-extension",
+    "version": "14.3.0",
+    "description": "Facebook Social Plugins - All Social Plugins from Facebook (https://developers.facebook.com/docs/plugins/)",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": "^8.5",
+        "typo3/cms-core": "^14.3"
+    },
+    "authors": [
+        {
+            "name": "Nitin Parri",
+            "role": "Developer",
+            "email": "nitin@refresj.nl",
+            "homepage": "https://refresj.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Refresj\\FacebookSocialplugins\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "facebook_socialplugins",
+            "version": "14.3.0",
+            "Package": {
+                "providesPackages": {}
+            }
+        }
+    }
+}

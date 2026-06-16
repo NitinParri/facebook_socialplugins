@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="nl">
+    <file id="facebook_socialplugins" original="messages">
+
+        <!-- Plugin selection -->
+        <unit id="flexform.plugin.label">
+            <segment><source>Plugin</source><target>Plugin</target></segment>
+        </unit>
+        <unit id="flexform.plugin.select">
+            <segment><source>— Select plugin —</source><target>— Selecteer een plugin —</target></segment>
+        </unit>
+        <unit id="flexform.plugin.share_button">
+            <segment><source>Share Button</source><target>Share Button</target></segment>
+        </unit>
+        <unit id="flexform.plugin.page_plugin">
+            <segment><source>Page Plugin</source><target>Pagina Plugin</target></segment>
+        </unit>
+        <unit id="flexform.plugin.embedded_post">
+            <segment><source>Embedded Post</source><target>Ingesloten bericht</target></segment>
+        </unit>
+        <unit id="flexform.plugin.embedded_video">
+            <segment><source>Embedded Video / Live Video</source><target>Ingesloten video / Live video</target></segment>
+        </unit>
+
+        <!-- Shared -->
+        <unit id="flexform.href.label">
+            <segment><source>URL</source><target>URL</target></segment>
+        </unit>
+        <unit id="flexform.lazy.label">
+            <segment><source>Lazy loading</source><target>Lazy loading</target></segment>
+        </unit>
+
+        <!-- Share Button -->
+        <unit id="flexform.share_href_type.label">
+            <segment><source>URL to share</source><target>URL om te delen</target></segment>
+        </unit>
+        <unit id="flexform.share_href_type.custom">
+            <segment><source>Custom URL</source><target>Aangepaste URL</target></segment>
+        </unit>
+        <unit id="flexform.share_href_type.current">
+            <segment><source>Current page</source><target>Huidige pagina</target></segment>
+        </unit>
+        <unit id="flexform.share_href.label">
+            <segment><source>Custom URL</source><target>Aangepaste URL</target></segment>
+        </unit>
+        <unit id="flexform.share_layout.label">
+            <segment><source>Layout</source><target>Layout</target></segment>
+        </unit>
+        <unit id="flexform.share_size.label">
+            <segment><source>Size</source><target>Grootte</target></segment>
+        </unit>
+
+        <!-- Page Plugin -->
+        <unit id="flexform.page_tabs.label">
+            <segment><source>Tabs</source><target>Tabbladen</target></segment>
+        </unit>
+        <unit id="flexform.page_tabs.timeline">
+            <segment><source>Timeline</source><target>Tijdlijn</target></segment>
+        </unit>
+        <unit id="flexform.page_tabs.events">
+            <segment><source>Events</source><target>Evenementen</target></segment>
+        </unit>
+        <unit id="flexform.page_tabs.messages">
+            <segment><source>Messages</source><target>Berichten</target></segment>
+        </unit>
+        <unit id="flexform.page_width.label">
+            <segment><source>Width (180 to 500 pixels)</source><target>Breedte (180 tot 500 pixels)</target></segment>
+        </unit>
+        <unit id="flexform.page_height.label">
+            <segment><source>Height (min. 70 pixels)</source><target>Hoogte (min. 70 pixels)</target></segment>
+        </unit>
+        <unit id="flexform.page_hide_cover.label">
+            <segment><source>Hide cover photo</source><target>Verberg omslagfoto</target></segment>
+        </unit>
+        <unit id="flexform.page_show_facepile.label">
+            <segment><source>Show friend photos</source><target>Toon profielfoto's van vrienden</target></segment>
+        </unit>
+        <unit id="flexform.page_hide_cta.label">
+            <segment><source>Hide call-to-action button</source><target>Verberg call-to-action knop</target></segment>
+        </unit>
+        <unit id="flexform.page_small_header.label">
+            <segment><source>Small header</source><target>Kleine koptekst</target></segment>
+        </unit>
+        <unit id="flexform.page_adapt_container_width.label">
+            <segment><source>Adapt to container width</source><target>Aanpassen aan containerbreedte</target></segment>
+        </unit>
+
+        <!-- Embedded Post -->
+        <unit id="flexform.post_width.label">
+            <segment><source>Width (px, min. 350 - max. 750, empty = fluid)</source><target>Breedte (px, min. 350 - max. 750, leeg = fluid)</target></segment>
+        </unit>
+        <unit id="flexform.post_show_text.label">
+            <segment><source>Show caption text (photo-posts)</source><target>Toon bijschrifttekst (foto-posts)</target></segment>
+        </unit>
+
+        <!-- Embedded Video -->
+        <unit id="flexform.video_width.label">
+            <segment><source>Width (px, min. 220)</source><target>Breedte (px, min. 220)</target></segment>
+        </unit>
+        <unit id="flexform.video_allowfullscreen.label">
+            <segment><source>Allow fullscreen</source><target>Volledig scherm toestaan</target></segment>
+        </unit>
+        <unit id="flexform.video_autoplay.label">
+            <segment><source>Autoplay (muted, not on mobile)</source><target>Automatisch afspelen (gedempt, niet op mobiel)</target></segment>
+        </unit>
+        <unit id="flexform.video_show_text.label">
+            <segment><source>Show caption text (desktop only)</source><target>Toon bijschrifttekst (alleen desktop)</target></segment>
+        </unit>
+        <unit id="flexform.video_show_captions.label">
+            <segment><source>Show captions (desktop only)</source><target>Ondertitels weergeven (alleen desktop)</target></segment>
+        </unit>
+
+    </file>
+</xliff>

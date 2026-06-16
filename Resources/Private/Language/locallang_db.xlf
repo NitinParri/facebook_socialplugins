@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+    <file id="facebook_socialplugins" original="messages">
+
+        <!-- Plugin selection -->
+        <unit id="flexform.plugin.label">
+            <segment><source>Plugin</source></segment>
+        </unit>
+        <unit id="flexform.plugin.select">
+            <segment><source>— Select plugin —</source></segment>
+        </unit>
+        <unit id="flexform.plugin.share_button">
+            <segment><source>Share Button</source></segment>
+        </unit>
+        <unit id="flexform.plugin.page_plugin">
+            <segment><source>Page Plugin</source></segment>
+        </unit>
+        <unit id="flexform.plugin.embedded_post">
+            <segment><source>Embedded Post</source></segment>
+        </unit>
+        <unit id="flexform.plugin.embedded_video">
+            <segment><source>Embedded Video / Live Video</source></segment>
+        </unit>
+
+        <!-- Shared -->
+        <unit id="flexform.href.label">
+            <segment><source>URL</source></segment>
+        </unit>
+        <unit id="flexform.href.placeholder">
+            <segment><source>https://www.facebook.com/</source></segment>
+        </unit>
+        <unit id="flexform.lazy.label">
+            <segment><source>Lazy loading</source></segment>
+        </unit>
+
+        <!-- Share Button -->
+        <unit id="flexform.share_href_type.label">
+            <segment><source>URL to share</source></segment>
+        </unit>
+        <unit id="flexform.share_href_type.custom">
+            <segment><source>Custom URL</source></segment>
+        </unit>
+        <unit id="flexform.share_href_type.current">
+            <segment><source>Current page</source></segment>
+        </unit>
+        <unit id="flexform.share_href.label">
+            <segment><source>Custom URL</source></segment>
+        </unit>
+        <unit id="flexform.share_href.placeholder">
+            <segment><source>https://www.example.com/page/</source></segment>
+        </unit>
+        <unit id="flexform.share_layout.label">
+            <segment><source>Layout</source></segment>
+        </unit>
+        <unit id="flexform.share_size.label">
+            <segment><source>Size</source></segment>
+        </unit>
+
+        <!-- Page Plugin -->
+        <unit id="flexform.page_tabs.label">
+            <segment><source>Tabs</source></segment>
+        </unit>
+        <unit id="flexform.page_tabs.timeline">
+            <segment><source>Timeline</source></segment>
+        </unit>
+        <unit id="flexform.page_tabs.events">
+            <segment><source>Events</source></segment>
+        </unit>
+        <unit id="flexform.page_tabs.messages">
+            <segment><source>Messages</source></segment>
+        </unit>
+        <unit id="flexform.page_width.label">
+            <segment><source>Width (180 to 500 pixels)</source></segment>
+        </unit>
+        <unit id="flexform.page_height.label">
+            <segment><source>Height (min. 70 pixels)</source></segment>
+        </unit>
+        <unit id="flexform.page_hide_cover.label">
+            <segment><source>Hide cover photo</source></segment>
+        </unit>
+        <unit id="flexform.page_show_facepile.label">
+            <segment><source>Show friend photos</source></segment>
+        </unit>
+        <unit id="flexform.page_hide_cta.label">
+            <segment><source>Hide call-to-action button</source></segment>
+        </unit>
+        <unit id="flexform.page_small_header.label">
+            <segment><source>Small header</source></segment>
+        </unit>
+        <unit id="flexform.page_adapt_container_width.label">
+            <segment><source>Adapt to container width</source></segment>
+        </unit>
+
+        <!-- Embedded Post -->
+        <unit id="flexform.post_width.label">
+            <segment><source>Width (px, min. 350 - max. 750, empty = fluid)</source></segment>
+        </unit>
+        <unit id="flexform.post_show_text.label">
+            <segment><source>Show caption text (photo-posts)</source></segment>
+        </unit>
+
+        <!-- Embedded Video -->
+        <unit id="flexform.video_width.label">
+            <segment><source>Width (px, min. 220)</source></segment>
+        </unit>
+        <unit id="flexform.video_allowfullscreen.label">
+            <segment><source>Allow fullscreen</source></segment>
+        </unit>
+        <unit id="flexform.video_autoplay.label">
+            <segment><source>Autoplay (muted, not on mobile)</source></segment>
+        </unit>
+        <unit id="flexform.video_show_text.label">
+            <segment><source>Show caption text (desktop only)</source></segment>
+        </unit>
+        <unit id="flexform.video_show_captions.label">
+            <segment><source>Show captions (desktop only)</source></segment>
+        </unit>
+
+    </file>
+</xliff>
