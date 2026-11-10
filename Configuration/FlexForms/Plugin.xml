@@ -50,6 +50,8 @@
                         </displayCond>
                         <config>
                             <type>input</type>
+                            <eval>trim</eval>
+                            <required>1</required>
                             <placeholder>facebook_socialplugins.backend:href.placeholder</placeholder>
                         </config>
                     </settings.href>
@@ -88,6 +90,8 @@
                         </displayCond>
                         <config>
                             <type>input</type>
+                            <eval>trim</eval>
+                            <required>1</required>
                             <placeholder>facebook_socialplugins.backend:share_href.placeholder</placeholder>
                         </config>
                     </settings.share_href>
@@ -98,6 +102,7 @@
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
+                            <default>button_count</default>
                             <items>
                                 <numIndex index="0">
                                     <label>facebook_socialplugins.backend:share_layout.button_count</label>
@@ -121,6 +126,7 @@
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
+                            <default>small</default>
                             <items>
                                 <numIndex index="0">
                                     <label>facebook_socialplugins.backend:share_size.small</label>
