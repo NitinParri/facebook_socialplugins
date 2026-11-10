@@ -9,46 +9,44 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- *   Use as <fb:sdk appId="{settings.appId}" locale="{settings.locale}" />
+ * Loads the Facebook JavaScript SDK once per page via the AssetCollector.
+ *
+ * Use as <fb:sdk appId="{settings.appId}" locale="{settings.locale}" />
  */
 class SdkViewHelper extends AbstractViewHelper
 {
 
-    protected $escapeOutput = false;
+    protected const SDK_VERSION = 'v25.0';
+
+    protected const DEFAULT_LOCALE = 'en_US';
 
     public function initializeArguments(): void
     {
-        $this->registerArgument('appId', 'string', 'Facebook App ID', true);
-        $this->registerArgument('locale', 'string', 'SDK locale, bijv. nl_NL', false, 'nl_NL');
+        $this->registerArgument('appId', 'string', 'Facebook App ID (optional)', false, '');
+        $this->registerArgument('locale', 'string', 'SDK locale, e.g. nl_NL', false, self::DEFAULT_LOCALE);
     }
 
     public function render(): string
     {
-        $appId  = htmlspecialchars((string)$this->arguments['appId'], ENT_QUOTES, 'UTF-8');
-        $locale = htmlspecialchars((string)$this->arguments['locale'], ENT_QUOTES, 'UTF-8');
+        $appId  = trim((string)$this->arguments['appId']);
+        $locale = (string)$this->arguments['locale'];
 
-        $assetCollector = GeneralUtility::makeInstance(AssetCollector::class);
+        if (preg_match('/^[a-z]{2}_[A-Z]{2}$/', $locale) !== 1) {
+            $locale = self::DEFAULT_LOCALE;
+        }
 
-        $initScript = "
-window.fbAsyncInit = function() {
-    FB.init({
-        appId   : '" . $appId . "',
-        xfbml   : true,
-        version : 'v25.0'
-    });
-};
-        ";
+        $parameters = [
+            'xfbml'   => '1',
+            'version' => self::SDK_VERSION,
+        ];
 
-        $assetCollector->addInlineJavaScript(
-            'facebook-jssdk-init',
-            $initScript,
-            [],
-            ['priority' => true]
-        );
+        if ($appId !== '') {
+            $parameters['appId'] = $appId;
+        }
 
-        $assetCollector->addJavaScript(
+        GeneralUtility::makeInstance(AssetCollector::class)->addJavaScript(
             'facebook-jssdk',
-            'https://connect.facebook.net/' . $locale . '/sdk.js',
+            'https://connect.facebook.net/' . $locale . '/sdk.js#' . http_build_query($parameters, '', '&'),
             [
                 'async'       => 'async',
                 'defer'       => 'defer',
