@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="nl">
+  <file id="facebook_socialplugins_set" original="labels">
+
+    <!-- Categories -->
+    <unit id="categories.Social">
+      <segment><source>Facebook Social Plugins</source><target>Facebook Social Plugins</target></segment>
+    </unit>
+    <unit id="categories.Social.app">
+      <segment><source>App Settings</source><target>App-instellingen</target></segment>
+    </unit>
+
+    <!-- Settings -->
+    <unit id="settings.plugin.tx_facebooksocialplugins.settings.appId">
+      <segment><source>Facebook App ID</source><target>Facebook App-ID</target></segment>
+    </unit>
+    <unit id="settings.description.plugin.tx_facebooksocialplugins.settings.appId">
+      <segment><source>App ID of your Facebook App. Create one at https://developers.facebook.com/apps/ if you don't have it yet.</source><target>App-ID van je Facebook-app. Maak er een aan op https://developers.facebook.com/apps/ als je die nog niet hebt.</target></segment>
+    </unit>
+    <unit id="settings.plugin.tx_facebooksocialplugins.settings.locale">
+      <segment><source>SDK locale</source><target>SDK-taal</target></segment>
+    </unit>
+    <unit id="settings.description.plugin.tx_facebooksocialplugins.settings.locale">
+      <segment><source>Locale for the Facebook JavaScript SDK, e.g., nl_NL, en_US, de_DE.</source><target>Taalcode voor de Facebook JavaScript SDK, bijvoorbeeld nl_NL, en_US of de_DE.</target></segment>
+    </unit>
+
+  </file>
+</xliff>

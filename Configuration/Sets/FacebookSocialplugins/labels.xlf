@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="facebook_socialplugins_set" original="labels">
+
+    <!-- Categories -->
+    <unit id="categories.Social">
+      <segment><source>Facebook Social Plugins</source></segment>
+    </unit>
+    <unit id="categories.Social.app">
+      <segment><source>App Settings</source></segment>
+    </unit>
+
+    <!-- Settings -->
+    <unit id="settings.plugin.tx_facebooksocialplugins.settings.appId">
+      <segment><source>Facebook App ID</source></segment>
+    </unit>
+    <unit id="settings.description.plugin.tx_facebooksocialplugins.settings.appId">
+      <segment><source>App ID of your Facebook App. Create one at https://developers.facebook.com/apps/ if you don't have it yet.</source></segment>
+    </unit>
+    <unit id="settings.plugin.tx_facebooksocialplugins.settings.locale">
+      <segment><source>SDK locale</source></segment>
+    </unit>
+    <unit id="settings.description.plugin.tx_facebooksocialplugins.settings.locale">
+      <segment><source>Locale for the Facebook JavaScript SDK, e.g., nl_NL, en_US, de_DE.</source></segment>
+    </unit>
+
+  </file>
+</xliff>
