@@ -7,14 +7,9 @@ namespace Refresj\FacebookSocialplugins\Controller;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 class PluginController extends ActionController
 {
-
-    public function __construct(
-        private readonly ContentObjectRenderer $contentObjectRenderer
-    ) {}
 
     public function indexAction(): ResponseInterface
     {
@@ -27,8 +22,16 @@ class PluginController extends ActionController
             $settings['share_href'] = $hrefType === 'current'
                 ? $this->getCurrentPageUrl()
                 : $this->sanitizeUrl((string)($settings['share_href'] ?? ''));
+
+            $href = $settings['share_href'];
         } else {
             $settings['href'] = $this->sanitizeUrl((string)($settings['href'] ?? ''));
+
+            $href = $settings['href'];
+        }
+
+        if ($plugin === '' || $href === '') {
+            return $this->htmlResponse('');
         }
 
         $this->view->assign('settings', $settings);
@@ -36,15 +39,15 @@ class PluginController extends ActionController
         return $this->htmlResponse();
     }
 
-    private function getCurrentPageUrl(): string
+    protected function getCurrentPageUrl(): string
     {
-        return $this->contentObjectRenderer->typoLink_URL([
-            'parameter'        => 't3://page?uid=current',
-            'forceAbsoluteUrl' => true,
-        ]);
+        return $this->uriBuilder
+            ->reset()
+            ->setCreateAbsoluteUri(true)
+            ->build();
     }
 
-    private function sanitizeUrl(string $url): string
+    protected function sanitizeUrl(string $url): string
     {
         $url = trim($url);
 
