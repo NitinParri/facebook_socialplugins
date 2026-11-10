@@ -10,7 +10,5 @@ defined('TYPO3') or die();
 ExtensionUtility::configurePlugin(
     'FacebookSocialplugins',
     'Plugin',
-    [PluginController::class => 'index'],
-    [],
-    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    [PluginController::class => 'index']
 );
