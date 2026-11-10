@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 $EM_CONF[$_EXTKEY] = [
     'title'            => 'Facebook Social Plugins',
     'description'      => 'Facebook Social Plugins - All Social Plugins from Facebook (https://developers.facebook.com/docs/plugins/)',
@@ -13,8 +11,8 @@ $EM_CONF[$_EXTKEY] = [
     'version'          => '14.3.0',
     'constraints'      => [
         'depends'   => [
-            'php'   => '^8.5',
-            'typo3' => '14.3.0-14.99.99',
+            'php'   => '8.5.0-8.99.99',
+            'typo3' => '14.3.0-14.3.99',
         ],
         'conflicts' => [],
         'suggests'  => [],
