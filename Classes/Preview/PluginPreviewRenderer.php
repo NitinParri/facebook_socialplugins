@@ -13,13 +13,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class PluginPreviewRenderer extends StandardContentPreviewRenderer
 {
 
-    private const LLL = 'LLL:EXT:facebook_socialplugins/Resources/Private/Language/locallang_db.xlf:';
+    private const DOMAIN = 'facebook_socialplugins.backend:';
 
     private const PLUGIN_LABELS = [
-        'share_button'   => 'flexform.plugin.share_button',
-        'page_plugin'    => 'flexform.plugin.page_plugin',
-        'embedded_post'  => 'flexform.plugin.embedded_post',
-        'embedded_video' => 'flexform.plugin.embedded_video',
+        'share_button'   => 'plugin.share_button',
+        'page_plugin'    => 'plugin.page_plugin',
+        'embedded_post'  => 'plugin.embedded_post',
+        'embedded_video' => 'plugin.embedded_video',
     ];
 
     public function renderPageModulePreviewContent(GridColumnItem $item): string
@@ -33,16 +33,16 @@ class PluginPreviewRenderer extends StandardContentPreviewRenderer
         $langService = $this->getLanguageService();
 
         if ($plugin === '') {
-            return '<p><em>' . htmlspecialchars($langService->sL(self::LLL . 'flexform.plugin.select')) . '</em></p>';
+            return '<p><em>' . htmlspecialchars($langService->label(self::DOMAIN . 'plugin.select')) . '</em></p>';
         }
 
         $pluginLabel = isset(self::PLUGIN_LABELS[$plugin])
-            ? $langService->sL(self::LLL . self::PLUGIN_LABELS[$plugin])
+            ? $langService->label(self::DOMAIN . self::PLUGIN_LABELS[$plugin])
             : $plugin;
 
         $href = match ($plugin) {
             'share_button' => ($settings['share_href_type'] ?? 'custom') === 'current'
-                ? $langService->sL(self::LLL . 'flexform.share_href_type.current')
+                ? $langService->label(self::DOMAIN . 'share_href_type.current')
                 : (string)($settings['share_href'] ?? ''),
             default        => (string)($settings['href'] ?? ''),
         };

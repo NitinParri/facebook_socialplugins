@@ -7,16 +7,14 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
 
-ExtensionUtility::registerPlugin(
+$pluginSignature = ExtensionUtility::registerPlugin(
     'FacebookSocialplugins',
     'Plugin',
-    'Facebook Social Plugin',
+    'facebook_socialplugins.backend:plugin.title',
     'content-facebooksocialplugins-plugin',
     'Refresj',
-    'Embed Facebook Social Plugins',
+    'facebook_socialplugins.backend:plugin.description',
     'FILE:EXT:facebook_socialplugins/Configuration/FlexForms/Plugin.xml'
 );
-
-$pluginSignature = 'facebooksocialplugins_plugin';
 
 $GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['previewRenderer'] = PluginPreviewRenderer::class;
