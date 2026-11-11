@@ -7,6 +7,6 @@ use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 return [
     'content-facebooksocialplugins-plugin' => [
         'provider' => SvgIconProvider::class,
-        'source'   => 'EXT:facebook_socialplugins/Resources/Public/Icons/Extension.svg',
+        'source'   => 'EXT:facebook_socialplugins/Resources/Public/Icons/ContentElement.svg',
     ],
 ];
