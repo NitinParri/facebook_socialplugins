@@ -75,7 +75,7 @@ plugin.tx_facebooksocialplugins.settings {
 
 The SDK is loaded automatically via TYPO3's `AssetCollector`. When multiple Facebook Social Plugin content elements are placed on the same page, the SDK is only loaded once.
 
-The SDK version used is `v25.0`.
+The SDK version used is `v27.0`.
 
 ## Privacy
 

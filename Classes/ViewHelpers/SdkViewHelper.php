@@ -16,7 +16,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 class SdkViewHelper extends AbstractViewHelper
 {
 
-    protected const SDK_VERSION = 'v25.0';
+    protected const SDK_VERSION = 'v27.0';
 
     protected const DEFAULT_LOCALE = 'en_US';
 
