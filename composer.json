@@ -1,7 +1,7 @@
 {
     "name": "refresj/facebook-socialplugins",
     "type": "typo3-cms-extension",
-    "version": "14.3.0",
+    "version": "14.3.1",
     "description": "Facebook Social Plugins - All Social Plugins from Facebook (https://developers.facebook.com/docs/plugins/)",
     "keywords": [
         "TYPO3",
@@ -48,7 +48,7 @@
     "extra": {
         "typo3/cms": {
             "extension-key": "facebook_socialplugins",
-            "version": "14.3.0",
+            "version": "14.3.1",
             "Package": {
                 "providesPackages": {}
             }
