@@ -77,6 +77,28 @@ The SDK is loaded automatically via TYPO3's `AssetCollector`. When multiple Face
 
 The SDK version used is `v27.0`.
 
+## Content Security Policy
+
+The extension extends the frontend Content Security Policy of TYPO3 (`Configuration/ContentSecurityPolicies.php`) with the sources the plugins need:
+
+| Directive         | Sources                        |
+| ----------------- | ------------------------------ |
+| `script-src-elem` | `https://connect.facebook.net` |
+| `connect-src`     | `https://connect.facebook.net` |
+| `frame-src`       | `https://*.facebook.com`       |
+
+These mutations apply to all frontend sites of the installation. Depending on the plugin and your own policy, additional sources may be required. The **Content-Security-Policy** backend module of TYPO3 lists recent violations and suggests resolutions.
+
+If the site-specific `config/sites/<your-site>/csp.yaml` overrides one of these directives with `mode: set`, the sources of this extension are lost. Add them to your own configuration with `mode: extend`:
+
+```yaml
+mutations:
+    - mode: extend
+      directive: "connect-src"
+      sources:
+          - "https://connect.facebook.net"
+```
+
 ## Privacy
 
 Loading the Facebook SDK connects the visitor's browser to Facebook (`connect.facebook.net`), which can transfer personal data and set cookies. In the EU this generally requires prior consent of the visitor.
