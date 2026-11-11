@@ -4,5 +4,8 @@ services:
     autoconfigure: true
     public: false
 
+  Refresj\FacebookSocialplugins\:
+    resource: '../Classes/*'
+
   Refresj\FacebookSocialplugins\Controller\PluginController:
     public: true

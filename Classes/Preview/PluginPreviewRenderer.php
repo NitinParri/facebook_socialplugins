@@ -4,29 +4,40 @@ declare(strict_types=1);
 
 namespace Refresj\FacebookSocialplugins\Preview;
 
+use Symfony\Component\DependencyInjection\Attribute\Autoconfigure;
+use TYPO3\CMS\Backend\Preview\PreviewRendererInterface;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 use TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools;
 use TYPO3\CMS\Core\Localization\LanguageService;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class PluginPreviewRenderer extends StandardContentPreviewRenderer
+#[Autoconfigure(public: true)]
+final readonly class PluginPreviewRenderer implements PreviewRendererInterface
 {
 
-    protected const DOMAIN = 'facebook_socialplugins.backend:';
+    private const DOMAIN = 'facebook_socialplugins.backend:';
 
-    protected const PLUGIN_LABELS = [
+    private const PLUGIN_LABELS = [
         'share_button'   => 'plugin.share_button',
         'page_plugin'    => 'plugin.page_plugin',
         'embedded_post'  => 'plugin.embedded_post',
         'embedded_video' => 'plugin.embedded_video',
     ];
 
+    public function __construct(
+        private StandardContentPreviewRenderer $standardContentPreviewRenderer,
+        private FlexFormTools $flexFormTools,
+    ) {}
+
+    public function renderPageModulePreviewHeader(GridColumnItem $item): string
+    {
+        return $this->standardContentPreviewRenderer->renderPageModulePreviewHeader($item);
+    }
+
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $row      = $item->getRow();
-        $flexForm = GeneralUtility::makeInstance(FlexFormTools::class)
-            ->convertFlexFormContentToArray((string)($row['pi_flexform'] ?? ''));
+        $flexForm = $this->flexFormTools->convertFlexFormContentToArray((string)($row['pi_flexform'] ?? ''));
 
         $settings = $flexForm['settings'] ?? [];
         $plugin   = (string)($settings['plugin'] ?? '');
@@ -56,12 +67,23 @@ class PluginPreviewRenderer extends StandardContentPreviewRenderer
         return $out;
     }
 
-    protected function getLabel(string $key): string
+    public function renderPageModulePreviewFooter(GridColumnItem $item): string
     {
+        return $this->standardContentPreviewRenderer->renderPageModulePreviewFooter($item);
+    }
+
+    public function wrapPageModulePreview(string $previewHeader, string $previewContent, GridColumnItem $item): string
+    {
+        return $this->standardContentPreviewRenderer->wrapPageModulePreview($previewHeader, $previewContent, $item);
+    }
+
+    private function getLabel(string $key): string
+    {
+        // label() can return null or a Stringable, so cast it (strict types)
         return (string)$this->getLanguageService()->label(self::DOMAIN . $key, [], $key);
     }
 
-    protected function getLanguageService(): LanguageService
+    private function getLanguageService(): LanguageService
     {
         return $GLOBALS['LANG'];
     }
